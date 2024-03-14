@@ -1,9 +1,10 @@
 <script setup>
 import VVanta from 'vue-vanta-revamp';
 
+
 const options = {
 	color: 0xa4647a,
-	backgroundColor: 0x403c46,
+	backgroundColor: 0x313643,
 	maxDistance: 31.00,
 	mouseControls: true,
 	touchControls: true,
