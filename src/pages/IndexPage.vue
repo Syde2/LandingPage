@@ -5,7 +5,11 @@ import VantaComponent from 'src/components/VantaComponent.vue'
 <template>
   <q-page class="flex flex-center">
     <VantaComponent />
-    <H1>Hello</H1>
+    <div>
+      <h1 class="title" >Demos Not Memos</h1> 
+    <p class="subtitle" >The world’s leading AI-powered developer platform.</p>
+
+    </div>
 
   </q-page>
 </template>

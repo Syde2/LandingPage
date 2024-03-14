@@ -1,1 +1,19 @@
 // app global css in SCSS form
+@font-face {
+	font-family: 'Mona Sans';
+	src: url('./fonts/MonaSans/Mona-Sans.woff2');
+	font-weight: 200 900;
+	font-stretch: 75% 125%;
+  }
+  
+  .title {
+	font-family: 'Mona Sans';
+	font-weight: 700;
+	color: white;
+  }
+  .subtitle{
+	font-size: 22px;
+	font-family: 'Mona Sans';
+	font-weight: 400;
+	color: #848D97;
+  }
