@@ -5,7 +5,6 @@ import HeaderComponent from 'src/components/HeaderComponent.vue'
 <template>
   <q-layout view="lHh Lpr lFf">
     <HeaderComponent />
-
     <q-page-container>
       <router-view />
     </q-page-container>
