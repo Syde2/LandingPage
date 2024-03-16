@@ -1,25 +1,29 @@
 <script setup>
 import VVanta from 'vue-vanta-revamp';
+import { getCssVar } from 'quasar';
+import { ref } from 'vue';
 
+const hexBgColor = getCssVar('dark');
+const hexAccentColor = getCssVar('accent');
+const vanta=ref()
 
 const options = {
-	color: 0xa4647a,
-	backgroundColor: 0x313643,
-	maxDistance: 31.00,
+	color: hexAccentColor,
+	backgroundColor: hexBgColor,
+	maxDistance: 30.00,
 	mouseControls: true,
 	touchControls: true,
-	gyroControls: false,
+	gyroControls: true,
 	minHeight: 200.00,
 	minWidth: 200.00,
-
-
 }
+
 </script>
 
 
 <template>
 	<div>
-		<v-vanta effect="net" :options="options"></v-vanta>
+		<v-vanta effect="net" ref="vanta"  :options="options"></v-vanta>
 	</div>
 </template>
 

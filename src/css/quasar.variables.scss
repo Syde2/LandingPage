@@ -1,17 +1,37 @@
+// EXPORTE L ENSEMBLE DES COULEURS DU NORD THEME
 :root {
-	--background: #313643;
+  //Polar Night
+  --nord0: #2e3440;
+  --nord1: #3b4252;
+  --nord2: #434c5e;
+  --nord3: #4c566a;
 
-  }
+  // Snow Storm
+  --nord4: #d8dee9;
+  --nord5: #e5e9f0;
+  --nord6: #eceff4;
+
+  //Frost
+  --nord7: #8fbcbb;
+  --nord8: #88c0d0;
+  --nord9: #81a1c1;
+  --nord10: #5e81ac;
+
+  //Aurora
+  --nord11: #bf616a;
+  --nord12: #d08770;
+  --nord13: #ebcb8b;
+  --nord14: #a3be8c;
+  --nord15: #b48ead;
+}
 
 
-$primary   : #1976D2;
-$secondary : #848D97;
-$accent    : #a4647ab9;
-
-$dark      : #313643;
-$dark-page : #313643;
-
-$positive  : #21BA45;
-$negative  : #C10015;
-$info      : #31CCEC;
-$warning   : #F2C037;
+$primary   : var(--nord7);
+$secondary : var(--nord3);
+$accent    : var(--nord9);;
+$dark      : var(--nord1);
+$dark-page : var(--nord1);
+$positive  : var(--nord8);;
+$negative  : var(--nord11);
+$info      : var(--nord13);
+$warning   : var(--nord12);
