@@ -7,9 +7,6 @@ import NLogo from './NLogo.vue';
 	<q-header reveal  class="bg-dark">
 		<q-toolbar class="q-pa-md">
 				<NLogo />
-
-
-
 		</q-toolbar>
 	</q-header>
 </template>

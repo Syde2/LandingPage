@@ -4,7 +4,7 @@ import { getCssVar } from 'quasar';
 import { ref } from 'vue';
 
 const hexBgColor = getCssVar('dark');
-const hexAccentColor = getCssVar('accent');
+const hexAccentColor = getCssVar('negative');
 const vanta=ref()
 
 const options = {
