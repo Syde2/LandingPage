@@ -1,5 +1,5 @@
 <script setup>
-import NLogo from './NLogo.vue';
+import NLogo from 'src/components/navBar/NLogo.vue'
 </script>
 
 <template>

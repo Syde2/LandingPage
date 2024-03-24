@@ -1,5 +1,5 @@
 <script setup>
-import HeaderComponent from 'src/components/HeaderComponent.vue'
+import HeaderComponent from 'src/components/navBar/HeaderComponent.vue'
 </script>
 
 <template>
