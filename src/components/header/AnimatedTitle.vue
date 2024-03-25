@@ -2,8 +2,6 @@
 import { ref, onMounted, computed } from 'vue';
 import { gsap, timeline } from 'boot/gsap.js'
 
-
-
 const c_words = [ 'Communauté', 'Consortium', 'Club', 'Cohorte', 'Caf',  'Communauté', 'Consortium', 'Club', 'Cohorte', 'Caf']
 const a_words = [ 'Animation', 'Aeropage', 'Amicale', 'Association', 'Ancetres','Animation', 'Aeropage', 'Amicale', 'Association', 'Ancetres' ]
 const d_words =['Developpeur', 'Dilletante', 'Designer', 'Destinataire','Developpeur', 'Dilletante', 'Designer', 'Destinataire','Developpeur', 'Dilletante' ]
@@ -13,18 +11,11 @@ const c_word = ref(c_words[0])
 const a_word = ref(a_words[0])
 const d_word = ref(d_words[0])
 const ca_word = ref(ca_words[0])
-
-
+const toggle =ref(false)
 let c = c_words.length
 
+const emits = defineEmits(['clickTitle'])
 
-// function wordToggle(){
-//   const wordIndex= c_words.indexOf(word.value)
-//   if(c_words.length > 1){
-//     c_words.splice(wordIndex,1)
-//   }
-//   word.value =  c_words[gsap.utils.random(0, c_words.length - 1, 1)]
-// }
 
 function wordToggle(){
   c_word.value = c_words[c]
@@ -39,7 +30,7 @@ function wordToggle(){
 }
 
 function onBeforeEnter(el) {
-  timeline.timeScale(1).yoyo(true)
+  timeline.timeScale(1)
 }
 
 function onEnter(el, done) {
@@ -52,10 +43,12 @@ function onEnter(el, done) {
 
 function onAfterEnter(el) {
   wordToggle()
-  console.log('words : ', c_words)
-  console.log(el)
 }
 
+function handleClick(){
+  toggle.value =true
+  emits('clickTitle')
+}
 
 
 
@@ -64,8 +57,10 @@ function onAfterEnter(el) {
 
 <template>
 
-  <Transition appear @before-enter="onBeforeEnter" @enter="onEnter" @after-enter="onAfterEnter" :css="false">
-    <h1   :key=c_word class="title text-center"> {{ a_word  +' '+  c_word +' '+ d_word +' '+ca_word}} </h1>
+  <Transition  @before-enter="onBeforeEnter" @enter="onEnter" @after-enter="onAfterEnter" :css="false">
+    <h1 v-if="toggle"   :key=c_word class="title text-center"> {{ a_word  +' '+  c_word +' '+ d_word +' '+ca_word}} </h1>
+    <h1 v-else @click=handleClick class="title text-center" style="cursor: pointer;"> AC DC </h1>
+
   </Transition>
 
 
