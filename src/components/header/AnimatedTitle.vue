@@ -4,27 +4,47 @@ import { gsap, timeline } from 'boot/gsap.js'
 
 
 
-const words = ['Hello', 'World', 'Lool' , 'Animation', 'Communauté', 'Developpeur', 'Internet', 'Consortium']
-const word = ref(words[0])
-const show = ref(true)
+const c_words = [ 'Communauté', 'Consortium', 'Club', 'Cohorte', 'Caf',  'Communauté', 'Consortium', 'Club', 'Cohorte', 'Caf']
+const a_words = [ 'Animation', 'Aeropage', 'Amicale', 'Association', 'Ancetres','Animation', 'Aeropage', 'Amicale', 'Association', 'Ancetres' ]
+const d_words =['Developpeur', 'Dilletante', 'Designer', 'Destinataire','Developpeur', 'Dilletante', 'Designer', 'Destinataire','Developpeur', 'Dilletante' ]
+const ca_words = [ 'Caf', 'Consortium', 'Club', 'Cohorte', 'Caf',  'Communauté', 'Consortium', 'Club', 'Cohorte', 'Caf']
 
+const c_word = ref(c_words[0])
+const a_word = ref(a_words[0])
+const d_word = ref(d_words[0])
+const ca_word = ref(ca_words[0])
+
+
+let c = c_words.length
+
+
+// function wordToggle(){
+//   const wordIndex= c_words.indexOf(word.value)
+//   if(c_words.length > 1){
+//     c_words.splice(wordIndex,1)
+//   }
+//   word.value =  c_words[gsap.utils.random(0, c_words.length - 1, 1)]
+// }
 
 function wordToggle(){
-  const wordIndex= words.indexOf(word.value)
-  if(words.length > 1){
-    words.splice(wordIndex,1)
+  c_word.value = c_words[c]
+  a_word.value = a_words[c]
+  d_word.value = d_words[c]
+
+  if(c >0){
+    c -=1
   }
-  word.value =  words[gsap.utils.random(0, words.length - 1, 1)]
+
+
 }
 
 function onBeforeEnter(el) {
-
+  timeline.timeScale(1).yoyo(true)
 }
 
 function onEnter(el, done) {
-  console.log('Enter : ', el)
-  timeline.to(el, {
-    duration: 0.3, rotationX: 90, transformOrigin:
+  timeline.from(el, {
+    duration:0.1, rotationX: 90, transformOrigin:
       "50% 50% -50", stagger:  {each:0.02, ease:"power2", from:"start"},
       onComplete: done
   })
@@ -32,7 +52,8 @@ function onEnter(el, done) {
 
 function onAfterEnter(el) {
   wordToggle()
-  console.log('words : ', words)
+  console.log('words : ', c_words)
+  console.log(el)
 }
 
 
@@ -44,7 +65,7 @@ function onAfterEnter(el) {
 <template>
 
   <Transition appear @before-enter="onBeforeEnter" @enter="onEnter" @after-enter="onAfterEnter" :css="false">
-    <h1  :key=words.length class="title"> {{ word }} </h1>
+    <h1   :key=c_word class="title text-center"> {{ a_word  +' '+  c_word +' '+ d_word +' '+ca_word}} </h1>
   </Transition>
 
 
