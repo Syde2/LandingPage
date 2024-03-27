@@ -4,20 +4,17 @@ import { getCssVar } from 'quasar';
 import { ref, watch, computed } from 'vue';
 
 const props = defineProps({
-  maxBirds:{
+  maxBirds :{
     type:Boolean,
     default:false
   }
 })
 
-const max = computed( ()=>props.maxBirds )
-
 const hexBgColor = getCssVar('dark');
 const hexNegativeColor = getCssVar('negative');
 const hexAccentColor = getCssVar('accent');
 const vanta=ref()
-const quantity = ref(0.1)
-
+const toggle = ref(false)
 const options = {
 	color1: hexNegativeColor,
   color2: hexAccentColor,
@@ -27,23 +24,19 @@ const options = {
 	gyroControls: true,
 	minHeight: 200.00,
 	minWidth: 200.00,
-  // colorMode: "lerpGradient",
-  quantity: quantity.value,
+  colorMode: "lerpGradient",
+  quantity: 5,
 }
 
-watch(max, maxBirds)
 
-function maxBirds(){
-  options.quantity = 5
-}
+
+
 
 </script>
 
 
 <template>
-	<div>
-		<v-vanta effect="birds" ref="vanta"  :options="options"></v-vanta>
-	</div>
+		<v-vanta v-if="props.maxBirds" effect="birds" ref="vanta"  :options="options"></v-vanta>
 </template>
 
 
