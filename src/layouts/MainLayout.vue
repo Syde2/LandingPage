@@ -4,7 +4,7 @@ import HeaderComponent from 'src/components/navBar/HeaderComponent.vue'
 
 <template>
   <q-layout view="lHh Lpr lFf">
-    <HeaderComponent />
+    <HeaderComponent style="position: absolute;" />
     <q-page-container>
       <router-view />
     </q-page-container>

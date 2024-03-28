@@ -4,9 +4,11 @@ import NLogo from 'src/components/navBar/NLogo.vue'
 
 <template>
 
-	<q-header reveal  class="bg-dark">
+	<div >
 		<q-toolbar class="q-pa-md">
+        <img  src="/public/ACDC.logoart.png">
+
 				<NLogo />
 		</q-toolbar>
-	</q-header>
+	</div>
 </template>
