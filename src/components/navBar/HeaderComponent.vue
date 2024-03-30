@@ -6,8 +6,6 @@ import NLogo from 'src/components/navBar/NLogo.vue'
 
 	<div >
 		<q-toolbar class="q-pa-md">
-        <img  src="/public/ACDC.logoart.png">
-
 				<NLogo />
 		</q-toolbar>
 	</div>
